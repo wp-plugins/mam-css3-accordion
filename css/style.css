@@ -1,0 +1,108 @@
+/*  
+CSS3 Horizontal Accordion Theme
+Version: 1.0
+Author: Mamun
+Author URL: http://www.mamunkhan.net/
+*/
+
+/*********** Theme Styles ***********/
+
+
+
+div > img{width:150px;height:auto;padding:1px 16px 10px 1px;float:left}
+.accordion  {
+	font-family: Arial, Helvetica, sans-serif;
+	border-right:1px solid #CCCCCC;
+}
+
+.accordion>ul>li>a {
+	-moz-box-shadow:inset 1px 0px 0px 0px #787178;
+	-webkit-box-shadow:inset 1px 0px 0px 0px #787178;
+	box-shadow:inset 1px 0px 0px 0px #787178;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6b666b, endColorstr=#575257);
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #6b666b), color-stop(1, #575257) );
+	background: -moz-linear-gradient( center top, #6b666b 5%, saddlebrown 100%);
+	background-color:#6b666b;
+	border-style:solid;
+	border-color:#423d42;
+	color:#ebe4eb;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:-1px -1px 0px #000000;
+}
+
+.accordion>ul>li>a:hover{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b666b', endColorstr='#333033');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #6b666b), color-stop(1, #333033) );
+	background:-moz-linear-gradient( center top, saddlebrown 5%, #333033 100% );
+	color:#fff;
+}
+
+.accordion>ul>li>div {
+	background-color:#ededed;
+	border-style:solid;
+	border-color:#ccc;
+	width:100%;
+}
+
+/******** Theme Structure *********/
+
+.accordion>ul>li>a {
+	border-width:0 1px 0 0;
+	width:40px;
+}
+
+ul.accordion-ie>li>a >span { /* IE only */
+	margin-left:10px;
+	/* This value is  necessary for centering rotated texts in Internet Explorer. */
+}
+.accordion>ul>li>div p{font-style:italic;}
+.accordion  {	
+	width:764px;
+	/* 	This value refers to the total width of visible components
+		width = accordion>ul>li>div ( width + paddingRight + paddingLeft )  
+			+ accordion>ul>li>a ( number of accordions x ( width + borderRrightWidth ) )  
+		width = ( 580px + 10px + 10px ) + ( 4 x ( 40px +1px ) )
+		width = 764px
+	*/
+}
+
+.accordion, .accordion>ul>li>a  {	
+	height:222px;
+	/* 	This value refers to the total height of visible area
+		height = accordion>ul>li>div ( height + paddingTop + paddingBottom + borderTopWidth + borderBottomWidth ) 
+		width = ( 200px + 10px + 10px + 1px +1px )
+		width = 222px
+	*/
+}
+
+.accordion>ul>li {
+	margin-right:-920px;
+	width:960px;
+	transition: margin-right 1.6s ease 1.9s;
+    -moz-transition: margin-right 1.6s ease 0.4s;
+    -webkit-transition: margin-right 1.6s ease 0.2s;
+    -o-transition: margin-right 1.6s ease 0.2s;
+}
+
+.accordion>ul>li>p {color:#000;}
+
+/*******  Do not change folllowing properties  **********/
+.accordion {overflow:hidden;}
+.accordion>ul {margin:0;padding:0;list-style:none;width:9999em;}
+.accordion>ul>li {float:left;overflow:hidden;}
+.accordion>ul>li>a {float:left;margin:0;position:relative;z-index:1;-moz-outline-style:none;outline:none;}
+.accordion>ul>li>a>span{ /* Text Rotation for all browsers */
+	-moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+	-ms-writing-mode:lr-bt;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	bottom:20px;display:block;position:absolute;width:100%;white-space:nowrap;
+}
+ul.accordion-ie>li>a>span {cursor:pointer;width:auto;} /* IE only */
+.accordion>ul>li>div {float:left;overflow-y:auto;overflow-x:hidden;}
+.accordion>ul>li:hover {margin-right:-122px;}
+ul.accordion-ie>li:hover {margin-right:0px;} /* IE only */
